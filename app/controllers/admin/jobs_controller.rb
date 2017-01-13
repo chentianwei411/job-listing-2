@@ -34,7 +34,7 @@ class Admin::JobsController < ApplicationController
       redirect_to admin_jobs_path
       flash[:warning] = "修改成功"
     else
-      render :update
+      render :edit
     end
   end
 
@@ -49,6 +49,6 @@ private
 
   def job_params
     params.require(:job).permit(:title, :description,:wage_lower_bound,:wage_upper_bound,
-    :contact_email)
+    :contact_email,:is_hidden)
   end
 end
